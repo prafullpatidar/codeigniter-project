@@ -1,0 +1,29 @@
+<span id="cal-slide-tick" style="display: none"></span>
+<div id="cal-slide-content" class="cal-event-list">
+	<ul class="unstyled list-unstyled">
+		<% _.each(events, function(event) { %>
+			<li>
+				<span class="pull-left event <%= event['class'] %>"></span>&nbsp;
+				<a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item">
+					<%= event.title %></a>
+			</li>
+		<% }) %>
+	</ul>
+</div>
+<script>
+    jQuery(document).ready(function(){
+        $('a.event-item').on('click',function(event){
+            event.stopPropagation();
+            var calendar_contact_id = $('#calendar_contact_id').val();
+            calendar_contact_id = (calendar_contact_id)?calendar_contact_id:'';
+            var event_id = $(this).data('event-id');
+            var event_class = $(this).data('event-class');
+            if(event_class=='event-warning' || event_class=='event-important' || event_class=='event-info' || event_class=='event-inverse'){
+                showAjaxModel('Lead Task','lead_task/addEditLeadTask/x/x/x/x/x/'+calendar_contact_id,event_id,'calendar','70%');
+            }else if(event_class=='event-special'){
+                showAjaxModel('Event','calendar/addEditEvent/x/x/x/'+calendar_contact_id,event_id,'calendar','65%');
+            }
+
+        });
+        });</script>
