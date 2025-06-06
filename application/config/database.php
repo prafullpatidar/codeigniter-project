@@ -75,18 +75,18 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => 'indian',
-	// 'database' => 'onenorthships',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'indian',
+	'database' => 'onenorthships',
 
 
 
 // LIVE DB ACCESS
-         'hostname' => 'shipping-db.cvoyuo2es55g.us-east-1.rds.amazonaws.com',
-         'username' => 'admin',
-         'password' => 'CnwvcR0hDsrOoVK7qa',
-         'database' => 'onenorthships',
+         // 'hostname' => 'shipping-db.cvoyuo2es55g.us-east-1.rds.amazonaws.com',
+         // 'username' => 'admin',
+         // 'password' => 'CnwvcR0hDsrOoVK7qa',
+         // 'database' => 'onenorthships',
 
 
 	'dbdriver' => 'mysqli',
